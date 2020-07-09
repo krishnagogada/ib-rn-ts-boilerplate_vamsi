@@ -6,10 +6,10 @@
  * @flow
  */
 
-import React, {Fragment, useState} from 'react';
-import {StyleSheet, View, Text, Alert, Image} from 'react-native';
+import React, { Fragment, useState } from "react";
+import { StyleSheet, View, Text, Alert, Image } from "react-native";
 
-import NavigationRouter from './app/navigation/NavigationRouter';
+import NavigationRouter from "./app/navigation/NavigationRouter";
 
 const App = () => {
   const [noOfLines, setNoOfLines] = useState(1);
@@ -20,30 +20,13 @@ const App = () => {
       <View
         style={{
           flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        {/* <Text numberOfLines={noOfLines} onPress={handleOnPress}>
-          hello world!. hi, this is ramakrishna i am new to react-native i am
-          learning react-native hello world!. hi, this is ramakrishna i am new
-          to react-native i am learning react-native hello world!. hi, this is
-          ramakrishna i am new to react-native i am learning react-native hello
-          world!. hi, this is ramakrishna i am new to react-native i am learning
-          react-native hello world!. hi, this is ramakrishna i am new to
-          react-native i am learning react-native hello world!. hi, this is
-          ramakrishna i am new to react-native i am learning react-native hello
-          world!. hi, this is ramakrishna i am new to react-native i am learning
-          react-native hello world!. hi, this is ramakrishna i am new to
-          react-native i am learning react-native hello world!. hi, this is
-          ramakrishna i am new to react-native i am learning react-native hello
-          world!. hi, this is ramakrishna i am new to react-native i am learning
-          react-native hello world!. hi, this is ramakrishna i am new to
-          react-native i am learning react-native hello world!. hi, this is
-          ramakrishna i am new to react-native i am learning react-native
-        </Text> */}
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Image
           source={{
-            uri: 'https://picsum.photos/200/300',
+            uri: "https://picsum.photos/200/300",
             width: 200,
             height: 200,
           }}
@@ -56,8 +39,8 @@ const App = () => {
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

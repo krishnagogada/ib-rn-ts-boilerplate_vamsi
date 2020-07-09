@@ -6,7 +6,5 @@
     <!-- Values from build type: debug -->
     <integer name="react_native_dev_server_port">8081</integer>
     <integer name="react_native_inspector_proxy_port">8081</integer>
-    <!-- Values from default config. -->
-    <string name="SAMPLE_ENV_VARIABLE" translatable="false">"sample-env-variable"</string>
 
 </resources>

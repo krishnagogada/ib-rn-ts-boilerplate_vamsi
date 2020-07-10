@@ -11,6 +11,7 @@ MERGED from [:react-native-gesture-handler] /home/ib_developer/Desktop/ib-rn-ts-
 MERGED from [:react-native-localize] /home/ib_developer/Desktop/ib-rn-ts-boilerplate_vamsi/node_modules/react-native-localize/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-native:0.60.5] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/f46edac729085948ad4551c8037aff9b/AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r245459] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/9e3aa761b44ce598702384de9260bd9e/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-linear-gradient] /home/ib_developer/Desktop/ib-rn-ts-boilerplate_vamsi/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.fresco:fresco:2.0.0] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/e4f9a4a09f7528c44ca17784f4f726af/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/81af61a7751ff006e819fa34674a9f06/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:drawee:2.0.0] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/290a4ffcb3bcd39088122d16a8a63917/AndroidManifest.xml:2:1-9:12
@@ -148,6 +149,8 @@ MERGED from [com.facebook.react:react-native:0.60.5] /home/ib_developer/.gradle/
 MERGED from [com.facebook.react:react-native:0.60.5] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/f46edac729085948ad4551c8037aff9b/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/9e3aa761b44ce598702384de9260bd9e/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/9e3aa761b44ce598702384de9260bd9e/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-linear-gradient] /home/ib_developer/Desktop/ib-rn-ts-boilerplate_vamsi/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-linear-gradient] /home/ib_developer/Desktop/ib-rn-ts-boilerplate_vamsi/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:fresco:2.0.0] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/e4f9a4a09f7528c44ca17784f4f726af/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fresco:2.0.0] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/e4f9a4a09f7528c44ca17784f4f726af/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /home/ib_developer/.gradle/caches/transforms-2/files-2.1/81af61a7751ff006e819fa34674a9f06/AndroidManifest.xml:5:5-7:41

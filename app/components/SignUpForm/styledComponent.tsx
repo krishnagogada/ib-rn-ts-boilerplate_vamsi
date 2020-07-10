@@ -1,12 +1,15 @@
 import styled from "styled-components/native";
+import { StyleSheet } from "react-native";
 
 export const Container = styled.View`
-  background-color: skyblue;
-  flex: 1;
+  display: flex;
   align-items: center;
 `;
 
 export const DatePicker = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin-top: 10;
   margin-bottom: 10;
 `;
@@ -21,6 +24,13 @@ export const LogIn = styled.View`
 `;
 
 export const LogInText = styled.Text`
-  color: white;
   text-align: center;
+  color: white;
 `;
+
+export const Styles = StyleSheet.create({
+  colorPicker: {
+    width: 75,
+    height: 50,
+  },
+});

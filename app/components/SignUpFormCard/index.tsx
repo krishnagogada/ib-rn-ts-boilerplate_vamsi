@@ -19,6 +19,7 @@ import {
   FullName,
   NameTextView,
   TextInputView,
+  VaildationError,
   BranchField,
   GenderField,
   GenderText,
@@ -40,12 +41,31 @@ import {
 
 @observer
 class SignUpFormCard extends Component {
-  @observable radioValue = 0;
+  @observable firstNameValue;
+  @observable lastNameValue;
+  @observable mobileNumberValue;
+  @observable emailValue;
+  @observable passwordValue;
+  @observable confirmPasswordValue;
+  @observable addressValue;
+  @observable radioValue = -1;
   @observable branchSelectedValue = "CSE";
   @observable date: any;
   @observable addressText: string | undefined;
   @observable rangeValue: number = 50;
   @observable isCheckBoxSelected: boolean = false;
+
+  @observable firstNameValidation = "";
+  @observable lastNameValidation = "";
+  @observable mobileNumberValidation = "";
+  @observable emailValidation = "";
+  @observable passwordValidation = "";
+  @observable confirmPasswordValidation = "";
+  @observable genderValidation = "";
+  @observable DOBValidation = "";
+  @observable addressValidation = "";
+  @observable termsAndConditionsValidation = "";
+
   textInputItems = [
     { id: Math.random().toString(), placeholder: "Mobile Number" },
     { id: Math.random().toString(), placeholder: "Email" },
@@ -59,8 +79,81 @@ class SignUpFormCard extends Component {
     { label: "Other", value: 2 },
   ];
 
+  onChangeFirstName = (value: string) => {
+    this.firstNameValue = value;
+  };
+
+  onChangeLastName = (value: string) => {
+    this.lastNameValue = value;
+  };
+
+  onChangeMobileNumber = (value: string) => {
+    this.mobileNumberValue = value;
+  };
+
+  onChangeEmail = (value: string) => {
+    this.emailValue = value;
+  };
+
+  onChangePassword = (value: string) => {
+    this.passwordValue = value;
+  };
+
+  onChangeConfirmPassword = (value: string) => {
+    this.confirmPasswordValue = value;
+  };
+
   onPressSignUpButton = () => {
-    Alert.alert("Simple Button pressed");
+    if (this.firstNameValue === "") {
+      this.firstNameValidation = "Enter First Name";
+    } else {
+      this.firstNameValidation = "";
+    }
+    if (this.lastNameValue === "") {
+      this.lastNameValidation = "Enter Last Name";
+    } else {
+      this.lastNameValidation = "";
+    }
+    if (this.mobileNumberValue === "") {
+      this.mobileNumberValidation = "Enter Mobile Number";
+    } else {
+      this.mobileNumberValidation = "";
+    }
+    if (this.emailValue === "") {
+      this.emailValidation = "Enter Email";
+    } else {
+      this.emailValidation = "";
+    }
+    if (this.passwordValue === "") {
+      this.passwordValidation = "Enter Password";
+    } else {
+      this.passwordValidation = "";
+    }
+    if (this.confirmPasswordValue === "") {
+      this.confirmPasswordValidation = "Enter Confirm Password";
+    } else {
+      this.confirmPasswordValidation = "";
+    }
+    if (this.radioValue === -1) {
+      this.genderValidation = "Select Gender";
+    } else {
+      this.genderValidation = "";
+    }
+    if (this.date === "") {
+      this.DOBValidation = "Select Date";
+    } else {
+      this.DOBValidation = "";
+    }
+    if (this.isCheckBoxSelected) {
+      this.termsAndConditionsValidation = "Required";
+    } else {
+      this.termsAndConditionsValidation = "";
+    }
+    if (this.addressValue === "") {
+      this.addressValidation = "Enter Address";
+    } else {
+      this.addressValidation = "";
+    }
   };
 
   onClickCheckBox = () => {
@@ -83,13 +176,52 @@ class SignUpFormCard extends Component {
     this.branchSelectedValue = value;
   };
 
-  renderRadioButtons = (value: number) => {
+  onSelectRadioButtons = (value: number) => {
     this.radioValue = value;
   };
 
-  renderTextInputItem = (textInputItem: any) => {
-    return <TextInputView placeholder={textInputItem.item.placeholder} />;
+  respectiveHandleMethod = (handleFunction) => {
+    switch (handleFunction) {
+      case "Mobile Number":
+        return this.onChangeMobileNumber;
+      case "Email":
+        return this.onChangeEmail;
+      case "Password":
+        return this.onChangePassword;
+      case "Confirm Password":
+        return this.onChangeConfirmPassword;
+    }
   };
+
+  respectiveVaildationError = (validationError) => {
+    switch (validationError) {
+      case "Mobile Number":
+        return this.mobileNumberValidation;
+      case "Email":
+        return this.emailValidation;
+      case "Password":
+        return this.passwordValidation;
+      case "Confirm Password":
+        return this.confirmPasswordValidation;
+    }
+  };
+
+  renderTextInputItem = (textInputItem: any) => {
+    return (
+      <>
+        <TextInputView
+          placeholder={textInputItem.item.placeholder}
+          onChangeText={this.respectiveHandleMethod(
+            textInputItem.item.placeholder
+          )}
+        />
+        <VaildationError>
+          {this.respectiveVaildationError(textInputItem.item.placeholder)}
+        </VaildationError>
+      </>
+    );
+  };
+
   render() {
     return (
       <SignUpCard>
@@ -99,10 +231,25 @@ class SignUpFormCard extends Component {
             Please fill in this form to create an account!
           </SignUpInstruction>
         </Header>
+        <View
+          style={{
+            borderBottomWidth: 1,
+            borderColor: "gray",
+            borderStyle: "solid",
+            width: "100%",
+            marginBottom: 10,
+          }}
+        ></View>
         <SignUpBody>
           <FullName>
-            <NameTextView placeholder={"First Name"} />
-            <NameTextView placeholder={"Last Name"} />
+            <NameTextView
+              placeholder={"First Name"}
+              onChangeText={this.onChangeFirstName}
+            />
+            <NameTextView
+              placeholder={"Last Name"}
+              onChangeText={this.onChangeLastName}
+            />
           </FullName>
           <FlatList
             data={this.textInputItems}
@@ -126,7 +273,7 @@ class SignUpFormCard extends Component {
                     obj={obj}
                     index={i}
                     isSelected={this.radioValue === i}
-                    onPress={this.renderRadioButtons}
+                    onPress={this.onSelectRadioButtons}
                     borderWidth={1}
                     buttonInnerColor={"skyblue"}
                     buttonOuterColor={
@@ -141,7 +288,7 @@ class SignUpFormCard extends Component {
                     obj={obj}
                     index={i}
                     labelHorizontal={true}
-                    onPress={this.renderRadioButtons}
+                    onPress={this.onSelectRadioButtons}
                     labelStyle={{ fontSize: 14, color: "gray", margin: 0 }}
                     labelWrapStyle={{ marginLeft: 0 }}
                   />

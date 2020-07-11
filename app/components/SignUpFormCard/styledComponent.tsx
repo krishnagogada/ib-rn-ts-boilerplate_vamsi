@@ -54,6 +54,10 @@ export const TextInputView = styled.TextInput`
   padding-left: 10;
 `;
 
+export const VaildationError = styled.Text`
+  color: red;
+`;
+
 export const BranchField = styled.View`
   display: flex;
   flex-direction: row;
